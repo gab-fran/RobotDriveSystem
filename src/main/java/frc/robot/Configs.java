@@ -1,5 +1,6 @@
 package frc.robot;
 
+import com.ctre.phoenix6.configs.TalonFXConfiguration;
 import com.revrobotics.spark.config.SparkFlexConfig;
 import com.revrobotics.spark.config.SparkMaxConfig;
 import com.revrobotics.spark.config.SparkBaseConfig.IdleMode;
@@ -11,6 +12,9 @@ public class Configs {
 
     /** Configuração para o motor de turning. */
     public static final SparkFlexConfig turningConfig = new SparkFlexConfig();
+
+    /** Configuração do motor Kraken X60 */
+    //public static final TalonFXConfiguration krakenConfig = new TalonFXConfiguration();
 
     static {
         // Configuração do motor de driving (movimento)
@@ -42,16 +46,16 @@ public class Configs {
 
         // Configuração do motor de turning (viragem)
         turningConfig
-                .idleMode(IdleMode.kCoast) // Modo de inatividade: Coast (Lembrando que o Coast para o motor suavemente
+                .idleMode(IdleMode.kBrake) // Modo de inatividade: Coast (Lembrando que o Coast para o motor suavemente
                                            // e o brake trava o motor)
                 .smartCurrentLimit(40); // Limite de corrente inteligente: 40A
         turningConfig
                 .openLoopRampRate(10) // Rampa de aceleração: O motor leva 10 segundos para chegar a sua velocidade
                                       // máxima
-                .closedLoopRampRate(10); // Rampa de aceleração para o pid: O motor leva 10 segundos para chegar a sua
+                .closedLoopRampRate(0.25); // Rampa de aceleração para o pid: O motor leva 10 segundos para chegar a sua
                                          // velocidade máxima
         turningConfig.closedLoop // Configuração dos valores do pid
-                .pid(0.00005, 0, 0);
+                .pid(0.08, 0, 0);
         /*
          * turningConfig
          * .absoluteEncoder
@@ -70,5 +74,7 @@ public class Configs {
          * .positionWrappingInputRange(0, turningFactor); // Faixa de entrada para
          * "wrap"
          */
+
+         // Configuração do motor Kraken X60 para driving (Movimento)
     }
 }
