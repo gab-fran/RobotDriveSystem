@@ -57,7 +57,7 @@ public class RobotContainer {
 
     robot.setDefaultCommand(
       new RunCommand(
-        () -> robot.drive(m_driverController.getLeftX(), -m_driverController.getLeftY()),
+        () -> robot.drive(m_driverController.getLeftX(), m_driverController.getLeftY()),
         robot));
 
   }

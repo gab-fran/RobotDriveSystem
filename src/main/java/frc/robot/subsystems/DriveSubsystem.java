@@ -53,11 +53,13 @@ public class DriveSubsystem extends SubsystemBase {
       angleDeg += 360;
 
     //double setpoint = (angleDeg / 360.0) * 7168.0;
+    
+    //pid.setReference(setpoint, ControlType.kPosition);
+
     double speed = Math.sqrt(xSpeed * xSpeed + ySpeed * ySpeed);
+    speed *= Math.signum(ySpeed);
 
     turningMotor.set(speed);
-
-    //pid.setReference(setpoint, ControlType.kPosition);
   }
   public void stopMotors(){
     drivingMotor.set(0);
