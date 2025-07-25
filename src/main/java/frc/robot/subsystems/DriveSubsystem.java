@@ -113,6 +113,7 @@ TalonFXConfiguration globalConfig = new TalonFXConfiguration();
     speed *= Math.signum(ySpeed);
     
     SmartDashboard.putNumber("SetPoint", setpoint);
+    SmartDashboard.putNumber("Encoder", turningEncoder.getPosition());
     
     // if (speed > 0.1) speed = 0.2;
     // if (speed < -0.1) speed = -0.2;

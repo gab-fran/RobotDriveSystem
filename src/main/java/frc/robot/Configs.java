@@ -55,7 +55,10 @@ public class Configs {
                 .closedLoopRampRate(0.25); // Rampa de aceleração para o pid: O motor leva 10 segundos para chegar a sua
                                          // velocidade máxima
         turningConfig.closedLoop // Configuração dos valores do pid
-                .pid(0.08, 0, 0);
+                .pid(0.08, 0, 0)
+                .outputRange(-1, 1)
+                .positionWrappingEnabled(true)
+                .positionWrappingInputRange(0, 1);
         /*
          * turningConfig
          * .absoluteEncoder
