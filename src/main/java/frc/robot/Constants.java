@@ -26,21 +26,13 @@ public final class Constants {
   public static class DriveConstants {
 
     // Ids CAN dos motores de direção e viragem
-    public static final int frontLeftDriving = 0; // Precisa ser definido
-
-    public static final int frontLeftTurning = 18;
-
+    public static final int frontLeftDriving = 22;
+    
     public static final int frontLeftDrivingKraken = 10;
 
-    public static final NeutralModeValue kNeutralMode = NeutralModeValue.Coast; // TalonFX
+    public static final int frontLeftTurning = 18;
+    public static final int frontRightTurning = 19;
 
-    /* Current Limiting */
-    // TalonFX
-    public static final int kCurrentLimit = 70; // supply current
-    public static final int kCurrentThreshold = 120; // stator current
-    public static final double kCurrentThresholdTime = 0.1;
-    public static final boolean kEnableCurrentLimit = true;
-    public static final double kClosedLoopRamp = 0.25;
-    public static boolean kInverted = false;
+
   }
 }
